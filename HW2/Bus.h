@@ -9,6 +9,6 @@
 #import "Vehicle.h"
 
 @interface Bus : Vehicle
-@property float* longtitude;
-@property float* latitude;
+@property float longtitude;
+@property float latitude;
 @end
