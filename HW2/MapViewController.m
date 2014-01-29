@@ -10,6 +10,7 @@
 
 @interface MapViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *txtMessage;
+- (IBAction)longtapWelcome:(UILongPressGestureRecognizer *)sender;
 - (IBAction)tapWelcome:(UITapGestureRecognizer *)sender;
 
 @end
@@ -35,6 +36,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)longtapWelcome:(UILongPressGestureRecognizer *)sender {
+   self.txtMessage.text = @"Welcome, dear User!";
 }
 
 - (IBAction)tapWelcome:(UITapGestureRecognizer *)sender {

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3EA07DB41892F949001A39FF /* RegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA07DB31892F949001A39FF /* RegViewController.m */; };
 		3EA07DB71892F95E001A39FF /* RecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA07DB61892F95E001A39FF /* RecoveryViewController.m */; };
-		3EA07DBA1892FC21001A39FF /* gaz.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3EA07DB91892FC21001A39FF /* gaz.jpg */; };
 		3EA07DBD1892FC8D001A39FF /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA07DBC1892FC8D001A39FF /* MapViewController.m */; };
 		3EB4382B18906034001EB60E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB4382A18906034001EB60E /* Foundation.framework */; };
 		3EB4382D18906034001EB60E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB4382C18906034001EB60E /* CoreGraphics.framework */; };
@@ -29,6 +28,9 @@
 		3EB438641890639D001EB60E /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB438631890639D001EB60E /* Vehicle.m */; };
 		3EB43867189064A3001EB60E /* Bus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB43866189064A3001EB60E /* Bus.m */; };
 		3EB4386B18906674001EB60E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB4386A18906674001EB60E /* User.m */; };
+		3EBE535418999AB200FBBA9A /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE535118999AB200FBBA9A /* JASidePanelController.m */; };
+		3EBE535518999AB200FBBA9A /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE535318999AB200FBBA9A /* UIViewController+JASidePanel.m */; };
+		3EBE535818999C4500FBBA9A /* MySidePanelControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE535718999C4500FBBA9A /* MySidePanelControllerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +48,6 @@
 		3EA07DB31892F949001A39FF /* RegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegViewController.m; sourceTree = "<group>"; };
 		3EA07DB51892F95E001A39FF /* RecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecoveryViewController.h; sourceTree = "<group>"; };
 		3EA07DB61892F95E001A39FF /* RecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecoveryViewController.m; sourceTree = "<group>"; };
-		3EA07DB91892FC21001A39FF /* gaz.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gaz.jpg; sourceTree = SOURCE_ROOT; };
 		3EA07DBB1892FC8D001A39FF /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		3EA07DBC1892FC8D001A39FF /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		3EB4382718906034001EB60E /* HW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +77,12 @@
 		3EB43866189064A3001EB60E /* Bus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bus.m; sourceTree = "<group>"; };
 		3EB4386918906674001EB60E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		3EB4386A18906674001EB60E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		3EBE535018999AB200FBBA9A /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JASidePanelController.h; path = "../../../JASidePanels-master/JASidePanels/Source/JASidePanelController.h"; sourceTree = "<group>"; };
+		3EBE535118999AB200FBBA9A /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JASidePanelController.m; path = "../../../JASidePanels-master/JASidePanels/Source/JASidePanelController.m"; sourceTree = "<group>"; };
+		3EBE535218999AB200FBBA9A /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+JASidePanel.h"; path = "../../../JASidePanels-master/JASidePanels/Source/UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
+		3EBE535318999AB200FBBA9A /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+JASidePanel.m"; path = "../../../JASidePanels-master/JASidePanels/Source/UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
+		3EBE535618999C4500FBBA9A /* MySidePanelControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySidePanelControllerViewController.h; sourceTree = "<group>"; };
+		3EBE535718999C4500FBBA9A /* MySidePanelControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySidePanelControllerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,16 +120,10 @@
 				3EA07DB61892F95E001A39FF /* RecoveryViewController.m */,
 				3EA07DBB1892FC8D001A39FF /* MapViewController.h */,
 				3EA07DBC1892FC8D001A39FF /* MapViewController.m */,
+				3EBE535618999C4500FBBA9A /* MySidePanelControllerViewController.h */,
+				3EBE535718999C4500FBBA9A /* MySidePanelControllerViewController.m */,
 			);
 			name = View;
-			sourceTree = "<group>";
-		};
-		3EA07DB81892FBBD001A39FF /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				3EA07DB91892FC21001A39FF /* gaz.jpg */,
-			);
-			name = Images;
 			sourceTree = "<group>";
 		};
 		3EB4381E18906033001EB60E = {
@@ -158,6 +159,7 @@
 		3EB4383018906034001EB60E /* HW2 */ = {
 			isa = PBXGroup;
 			children = (
+				3EBE534F18999A8D00FBBA9A /* JASidePanels */,
 				3EA07DB11892F926001A39FF /* View */,
 				3EB4386818906640001EB60E /* Model */,
 				3EB4383918906034001EB60E /* AppDelegate.h */,
@@ -172,7 +174,6 @@
 		3EB4383118906034001EB60E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3EA07DB81892FBBD001A39FF /* Images */,
 				3EB4383218906034001EB60E /* HW2-Info.plist */,
 				3EB4383318906034001EB60E /* InfoPlist.strings */,
 				3EB4383618906034001EB60E /* main.m */,
@@ -212,6 +213,17 @@
 				3EB4386A18906674001EB60E /* User.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		3EBE534F18999A8D00FBBA9A /* JASidePanels */ = {
+			isa = PBXGroup;
+			children = (
+				3EBE535018999AB200FBBA9A /* JASidePanelController.h */,
+				3EBE535118999AB200FBBA9A /* JASidePanelController.m */,
+				3EBE535218999AB200FBBA9A /* UIViewController+JASidePanel.h */,
+				3EBE535318999AB200FBBA9A /* UIViewController+JASidePanel.m */,
+			);
+			name = JASidePanels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +302,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EA07DBA1892FC21001A39FF /* gaz.jpg in Resources */,
 				3EB4384318906034001EB60E /* Images.xcassets in Resources */,
 				3EB4383518906034001EB60E /* InfoPlist.strings in Resources */,
 				3EB4383E18906034001EB60E /* Main.storyboard in Resources */,
@@ -317,9 +328,12 @@
 				3EB4384118906034001EB60E /* LoginViewController.m in Sources */,
 				3EA07DB71892F95E001A39FF /* RecoveryViewController.m in Sources */,
 				3EA07DB41892F949001A39FF /* RegViewController.m in Sources */,
+				3EBE535418999AB200FBBA9A /* JASidePanelController.m in Sources */,
 				3EB43861189062A1001EB60E /* Route.m in Sources */,
 				3EB4383B18906034001EB60E /* AppDelegate.m in Sources */,
 				3EA07DBD1892FC8D001A39FF /* MapViewController.m in Sources */,
+				3EBE535818999C4500FBBA9A /* MySidePanelControllerViewController.m in Sources */,
+				3EBE535518999AB200FBBA9A /* UIViewController+JASidePanel.m in Sources */,
 				3EB4383718906034001EB60E /* main.m in Sources */,
 				3EB438641890639D001EB60E /* Vehicle.m in Sources */,
 			);
