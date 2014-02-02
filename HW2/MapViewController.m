@@ -10,6 +10,7 @@
 
 @interface MapViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *txtMessage;
+
 - (IBAction)longtapWelcome:(UILongPressGestureRecognizer *)sender;
 - (IBAction)tapWelcome:(UITapGestureRecognizer *)sender;
 
@@ -45,6 +46,11 @@
 - (IBAction)tapWelcome:(UITapGestureRecognizer *)sender {
    
     self.txtMessage.text = @"Welcome, dear User!";
+    
+}
+
+- (void)selectRoute:(Route *)selectedRoute{
+    self.routeTitle.text =   selectedRoute.title;
     
 }
 @end

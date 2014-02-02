@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Route.h"
+
+@class Route;
 
 @interface MapViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *routeTitle;
+
+- (void) selectRoute:(Route *)selectedRoute;
 
 @end

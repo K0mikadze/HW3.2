@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Route : NSObject
++ (Route *)initRouteWithDictionary:(NSDictionary *)attributes;
 @property NSString* Name;
+@property (strong,nonatomic) NSString* title;
 @end

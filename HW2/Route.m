@@ -9,6 +9,12 @@
 #import "Route.h"
 
 @implementation Route
-
++(Route *)initRouteWithDictionary:(NSDictionary *)attributes{
+    Route* route = [[Route alloc] init];
+    
+    route.Title = attributes[@"route_title"];
+    
+    return route;
+}
 
 @end
