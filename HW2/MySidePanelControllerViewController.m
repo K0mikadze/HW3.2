@@ -32,7 +32,8 @@
     routeViewController.mapController = mapViewController;
     
     [self setLeftPanel:routeViewController];
-    [self setCenterPanel:navigationController];
+    [self setCenterPanel:navigationController
+     ];
     
 }
 
