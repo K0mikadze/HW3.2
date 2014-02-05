@@ -99,6 +99,9 @@
     
     [self.mapController selectRoute:route];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SetCurrentRoute" object:route.title];
+    
+    
     //return
     
 }

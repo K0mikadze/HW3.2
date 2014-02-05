@@ -11,6 +11,7 @@
 		3EA07DB41892F949001A39FF /* RegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA07DB31892F949001A39FF /* RegViewController.m */; };
 		3EA07DB71892F95E001A39FF /* RecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA07DB61892F95E001A39FF /* RecoveryViewController.m */; };
 		3EA07DBD1892FC8D001A39FF /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA07DBC1892FC8D001A39FF /* MapViewController.m */; };
+		3EA52B6A18A2E05D00F7AA27 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA52B6918A2E05D00F7AA27 /* MapKit.framework */; };
 		3EB4382B18906034001EB60E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB4382A18906034001EB60E /* Foundation.framework */; };
 		3EB4382D18906034001EB60E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB4382C18906034001EB60E /* CoreGraphics.framework */; };
 		3EB4382F18906034001EB60E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB4382E18906034001EB60E /* UIKit.framework */; };
@@ -51,6 +52,7 @@
 		3EA07DB61892F95E001A39FF /* RecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecoveryViewController.m; sourceTree = "<group>"; };
 		3EA07DBB1892FC8D001A39FF /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		3EA07DBC1892FC8D001A39FF /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		3EA52B6918A2E05D00F7AA27 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3EB4382718906034001EB60E /* HW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB4382A18906034001EB60E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3EB4382C18906034001EB60E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EA52B6A18A2E05D00F7AA27 /* MapKit.framework in Frameworks */,
 				3EB4382D18906034001EB60E /* CoreGraphics.framework in Frameworks */,
 				3EB4382F18906034001EB60E /* UIKit.framework in Frameworks */,
 				3EB4382B18906034001EB60E /* Foundation.framework in Frameworks */,
@@ -152,6 +155,7 @@
 		3EB4382918906034001EB60E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3EA52B6918A2E05D00F7AA27 /* MapKit.framework */,
 				3EB4382A18906034001EB60E /* Foundation.framework */,
 				3EB4382C18906034001EB60E /* CoreGraphics.framework */,
 				3EB4382E18906034001EB60E /* UIKit.framework */,

@@ -30,12 +30,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:(self) selector:@selector(didGetMyNotification:) name:(@"SetCurrentRoute") object:(nil)];
 	// Do any additional setup after loading the view.
 }
+
+- (void) didGetMyNotification:(NSNotification*)notification{
+    self.routeTitle.text =[notification object];
+
+}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    
+    
     // Dispose of any resources that can be recreated.
 }
 
