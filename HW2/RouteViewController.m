@@ -11,9 +11,12 @@
 #import <AFNetworking.h>
 #import "Route.h"
 #import <MBProgressHUD.h>
+#import "Config.h"
+#import "JASidePanelController.h"
 
 @interface RouteViewController ()
 @property (strong,nonatomic) NSMutableArray* routes;
+@property (strong,nonatomic) NSMutableArray* favoriteRoutes;
 @end
 
 @implementation RouteViewController
@@ -73,37 +76,70 @@
 
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 //{
-//    return self.routes.count;
+//    return 2; //add 2 section
 //}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    
     return self.routes.count;
+}
+
+-(void)tableView:(UITableView* )tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UIButton* disclosureButton = [[cell.subviews[0] subviews] objectAtIndex:0];
+    disclosureButton.frame = CGRectMake(200, disclosureButton.frame.origin.y, disclosureButton.frame.size.width, disclosureButton.frame.size.height);
+    
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
     Route* route = (Route*)self.routes[indexPath.row];
-    cell.textLabel.text = route.title;
-    //cell.textLabel.text = [NSString stringWithFormat:@"section %d, row %d", indexPath.section,indexPath.row];
     
+    static NSString *CellIdentifier = @"Cell";
+    static NSString *FavCellIdentifier = @"FavCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:route.isFavorited?FavCellIdentifier:CellIdentifier forIndexPath:indexPath];
+ 
+    cell.textLabel.text = route.title;
+    cell.detailTextLabel.text = route.price;
+   
     return cell;
 }
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)
+    section{
+    
+//    if (section != 0) {
+//        return nil;
+//    }
+   
+    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+    
+    view.backgroundColor = MENU_BACKGROUND_COLOR;
+    
+    return view;
+}
+
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     Route* route = (Route *)self.routes[indexPath.row];
     
-    [self.mapController selectRoute:route];
+   // [self.mapController selectRoute:route];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SetCurrentRoute" object:route.title];
     
-    
-    //return
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectRoute:)]){
+        [self.delegate didSelectRoute:route];
+        
+    }
+  //  JASidePanelController* sideController = self.sidePanelController;
+   // [sideController showCenterPanelAnimated:YES];
     
 }
+
+
 
 @end

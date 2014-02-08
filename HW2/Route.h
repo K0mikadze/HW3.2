@@ -12,4 +12,7 @@
 + (Route *)initRouteWithDictionary:(NSDictionary *)attributes;
 @property NSString* Name;
 @property (strong,nonatomic) NSString* title;
+@property (strong,nonatomic) NSString* price;
+@property (nonatomic) BOOL isFavorited;
+
 @end

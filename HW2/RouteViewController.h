@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@class MapViewController;
+
+@class MapViewController, Route;
+
+@protocol RoutesMenuProtocol <NSObject>
+
+-(void)didSelectRoute:(Route*)route;
+
+@end
 
 @interface RouteViewController : UITableViewController
 
+@property (weak,nonatomic) id<RoutesMenuProtocol> delegate;
 @property (strong,nonatomic) MapViewController* mapController;
 
 @end

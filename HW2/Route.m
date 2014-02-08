@@ -12,7 +12,9 @@
 +(Route *)initRouteWithDictionary:(NSDictionary *)attributes{
     Route* route = [[Route alloc] init];
     
-    route.Title = attributes[@"route_title"];
+    route.title = attributes[@"route_title"];
+    route.price = attributes[@"route_price"];
+    
     
     return route;
 }

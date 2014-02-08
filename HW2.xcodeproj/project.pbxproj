@@ -46,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		264CBFEFBE7E46AF9504838C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		3E6658E418A532C700715CF2 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		3EA07DB21892F949001A39FF /* RegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegViewController.h; sourceTree = "<group>"; };
 		3EA07DB31892F949001A39FF /* RegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegViewController.m; sourceTree = "<group>"; };
 		3EA07DB51892F95E001A39FF /* RecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecoveryViewController.h; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 				3EBE535718999C4500FBBA9A /* MySidePanelControllerViewController.m */,
 				3EBE5359189AAD0F00FBBA9A /* RouteViewController.h */,
 				3EBE535A189AAD0F00FBBA9A /* RouteViewController.m */,
+				3E6658E418A532C700715CF2 /* Config.h */,
 			);
 			name = View;
 			sourceTree = "<group>";

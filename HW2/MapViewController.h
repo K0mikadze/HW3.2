@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Route.h"
+#import "RouteViewController.h"
 
 @class Route;
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <RoutesMenuProtocol>
 @property (weak, nonatomic) IBOutlet UILabel *routeTitle;
 
 - (void) selectRoute:(Route *)selectedRoute;

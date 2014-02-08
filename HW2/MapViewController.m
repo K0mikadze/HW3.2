@@ -7,10 +7,13 @@
 //
 
 #import "MapViewController.h"
+#import "Route.h"
+#import "Config.h"
 
 @interface MapViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *txtMessage;
-
+@property (nonatomic,strong) UIBarButtonItem* favoriteBarButton;
+@property (strong, nonatomic) Route* currentRoute;
 - (IBAction)longtapWelcome:(UILongPressGestureRecognizer *)sender;
 - (IBAction)tapWelcome:(UITapGestureRecognizer *)sender;
 
@@ -32,7 +35,14 @@
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:(self) selector:@selector(didGetMyNotification:) name:(@"SetCurrentRoute") object:(nil)];
-	// Do any additional setup after loading the view.
+    
+   
+    self.favoriteBarButton = [[UIBarButtonItem alloc]initWithTitle:@"★" style:UIBarButtonItemStyleBordered target:nil action: @selector(favAction)];
+    
+	self.navigationItem.rightBarButtonItem = self.favoriteBarButton;
+    
+ 
+    
 }
 
 - (void) didGetMyNotification:(NSNotification*)notification{
@@ -59,8 +69,24 @@
     
 }
 
-- (void)selectRoute:(Route *)selectedRoute{
-    self.routeTitle.text =   selectedRoute.title;
+
+
+#pragma mark - RouteMenuProtocol
+
+-(void)didSelectRoute:(Route *)route{
+ //   self.routeTitle.text =   route.title;
+    self.title = route.title;
     
+    self.currentRoute = route;
+    
+    self.favoriteBarButton.title = route.isFavorited? @"☆" : @"★";
 }
+
+-(void)favAction{
+    self.currentRoute.isFavorited = !self.currentRoute.isFavorited;
+    self.favoriteBarButton.title = self.currentRoute.isFavorited? @"☆" : @"★";
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_FAVS_CHANGED object:nil];
+}
+
 @end

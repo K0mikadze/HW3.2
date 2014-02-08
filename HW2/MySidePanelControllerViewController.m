@@ -29,7 +29,7 @@
     RouteViewController* routeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"leftViewController"];
     
     //communicate
-    routeViewController.mapController = mapViewController;
+    routeViewController.delegate = mapViewController;
     
     [self setLeftPanel:routeViewController];
     [self setCenterPanel:navigationController
