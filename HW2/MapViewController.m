@@ -14,8 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *txtMessage;
 @property (nonatomic,strong) UIBarButtonItem* favoriteBarButton;
 @property (strong, nonatomic) Route* currentRoute;
-- (IBAction)longtapWelcome:(UILongPressGestureRecognizer *)sender;
-- (IBAction)tapWelcome:(UITapGestureRecognizer *)sender;
+
 
 @end
 
@@ -37,11 +36,16 @@
     [[NSNotificationCenter defaultCenter] addObserver:(self) selector:@selector(didGetMyNotification:) name:(@"SetCurrentRoute") object:(nil)];
     
    
-    self.favoriteBarButton = [[UIBarButtonItem alloc]initWithTitle:@"★" style:UIBarButtonItemStyleBordered target:nil action: @selector(favAction)];
+    self.favoriteBarButton = [[UIBarButtonItem alloc]initWithTitle:@"★" style:UIBarButtonItemStyleBordered target:self action: @selector(favAction)];
     
 	self.navigationItem.rightBarButtonItem = self.favoriteBarButton;
     
  
+    
+}
+
+-(void) dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
 
@@ -59,15 +63,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)longtapWelcome:(UILongPressGestureRecognizer *)sender {
-   self.txtMessage.text = @"Welcome, dear User!";
-}
-
-- (IBAction)tapWelcome:(UITapGestureRecognizer *)sender {
-   
-    self.txtMessage.text = @"Welcome, dear User!";
-    
-}
 
 
 
@@ -80,6 +75,8 @@
     self.currentRoute = route;
     
     self.favoriteBarButton.title = route.isFavorited? @"☆" : @"★";
+    
+  
 }
 
 -(void)favAction{
@@ -87,6 +84,7 @@
     self.favoriteBarButton.title = self.currentRoute.isFavorited? @"☆" : @"★";
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_FAVS_CHANGED object:nil];
+    
+    
 }
-
 @end

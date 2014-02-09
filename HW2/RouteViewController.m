@@ -13,6 +13,7 @@
 #import <MBProgressHUD.h>
 #import "Config.h"
 #import "JASidePanelController.h"
+//#import "MarshrutkiApi.h"
 
 @interface RouteViewController ()
 @property (strong,nonatomic) NSMutableArray* routes;
@@ -35,8 +36,11 @@
     [super viewDidLoad];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-   
+    
     [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+    
+    self.tableView.backgroundColor = MENU_BACKGROUND_COLOR;
+    
     
     [manager GET:@"http://marshrutki.com.ua/mu/routes.php" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
@@ -64,6 +68,13 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(favoritiesChanged) name:NOTIFICATION_FAVS_CHANGED object:nil];
+    
+}
+
+-(void) dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,8 +114,8 @@
  
     cell.textLabel.text = route.title;
     cell.detailTextLabel.text = route.price;
-   
-    return cell;
+    
+   return cell;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)
@@ -138,6 +149,19 @@
   //  JASidePanelController* sideController = self.sidePanelController;
    // [sideController showCenterPanelAnimated:YES];
     
+}
+
+-(void)favoritiesChanged{
+    
+    
+    
+  //  self.routes = [self.routes sortedArrayUsingSelector:(@selector(Compare:))];
+  
+//    [self.routes sortWithOptions:NSSortConcurrent usingComparator:^NSComparisonResult(id obj1, id obj2) {
+//        return [obj1 isEqual:obj2];
+//    }];
+//    
+    //[self.tableView reloadData];
 }
 
 
