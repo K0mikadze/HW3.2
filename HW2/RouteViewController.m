@@ -70,6 +70,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(favoritiesChanged) name:NOTIFICATION_FAVS_CHANGED object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:(self) selector:@selector(favoritiesChanged) name:NOTIFICATION_FAVS_CHANGED object:(nil)];
 }
 
 -(void) dealloc{
@@ -148,20 +149,32 @@
     }
   //  JASidePanelController* sideController = self.sidePanelController;
    // [sideController showCenterPanelAnimated:YES];
+    //разобрать эту конструкцию
+    [(JASidePanelController*)[self parentViewController] showCenterPanelAnimated:YES];
     
 }
 
 -(void)favoritiesChanged{
     
     
+    NSArray* sortedRoutes;
+    sortedRoutes = [self.routes sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        Route* first = a;
+        Route* second = b;
+        if (!first.isFavorited&&second.isFavorited) { //1-not fav. 2-fav.
+            return NSOrderedDescending;
+        }
+        if (first.isFavorited&&!second.isFavorited) { //1-fav. 2-not fav.
+            return NSOrderedAscending;
+        }
+        
+        return NSOrderedSame;
+        
+    }];
     
-  //  self.routes = [self.routes sortedArrayUsingSelector:(@selector(Compare:))];
-  
-//    [self.routes sortWithOptions:NSSortConcurrent usingComparator:^NSComparisonResult(id obj1, id obj2) {
-//        return [obj1 isEqual:obj2];
-//    }];
-//    
-    //[self.tableView reloadData];
+    self.routes = [sortedRoutes mutableCopy];
+
+    [self.tableView reloadData];
 }
 
 
